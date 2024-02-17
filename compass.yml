@@ -2,7 +2,7 @@ name: Python Application
 id: 'ari:cloud:compass:50eeb54a-bd4a-467a-ae53-532574431702:component/5ec6ba4f-632a-4bd6-81bc-2c0ce8b035bf/6f4238ab-7ccd-415f-ac0f-105898406b30'
 description: |-
   This is the Application Component.
-  For the Compass POC Purpose
+  Python Application
 configVersion: 1
 typeId: APPLICATION
 ownerId: 'ari:cloud:teams::team/f4ac0e04-6829-4825-b907-463c0cbabb6e'
