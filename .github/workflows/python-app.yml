@@ -82,11 +82,11 @@ jobs:
     - name: Get Cyclomatic Complexity
       id: get-cyclomatic-complexity
       run: |
-            COMPLEXITY=$(curl -s "https://sonarcloud.io/api/measures/component?component=compasspoc_pythonapp-compass&metricKeys=cyclomatic_complexity" \
+            COMPLEXITY=$(curl -s "https://sonarcloud.io/api/measures/component?component=compasspoc_pythonapp-compass&metricKeys=cognitive_complexity" \
             -H "Authorization: Basic ${{ secrets.SONAR_TOKEN }}" \
              H "Accept: application/json" | jq -r '.component.measures[0].value')
 
-              echo "Cyclomatic Complexity: $COMPLEXITY"
+            echo "Cyclomatic Complexity: $COMPLEXITY"
       shell: bash
          
 
