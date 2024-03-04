@@ -74,7 +74,21 @@ jobs:
         
 
     - run: |
-            docker-compose up -d          
+            docker-compose up -d      
+
+
+
+
+    - name: Get Cyclomatic Complexity
+      id: get-cyclomatic-complexity
+      run: |
+            COMPLEXITY=$(curl -s "https://sonarcloud.io/api/measures/component?component=compasspoc_pythonapp-compass&metricKeys=cyclomatic_complexity" \
+            -H "Authorization: Basic ${{ secrets.SONAR_TOKEN }}" \
+             H "Accept: application/json" | jq -r '.component.measures[0].value')
+
+              echo "Cyclomatic Complexity: $COMPLEXITY"
+              shell: bash
+         
 
     
 #    - name: Trivy Scan Report
@@ -102,7 +116,7 @@ jobs:
           name: reports 
           path: trivy-report.json
           
-
+   
 
 
     - name: Send Cyclomatic Complexity to Compass
