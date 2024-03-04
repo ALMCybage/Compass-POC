@@ -87,7 +87,7 @@ jobs:
              H "Accept: application/json" | jq -r '.component.measures[0].value')
 
               echo "Cyclomatic Complexity: $COMPLEXITY"
-              shell: bash
+      shell: bash
          
 
     
